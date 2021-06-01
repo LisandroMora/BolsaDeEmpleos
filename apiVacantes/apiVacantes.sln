@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apiVacantes", "apiVacantes\apiVacantes.csproj", "{ABC5F949-7E53-4604-BCC4-EE9A3B170A98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABC5F949-7E53-4604-BCC4-EE9A3B170A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABC5F949-7E53-4604-BCC4-EE9A3B170A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABC5F949-7E53-4604-BCC4-EE9A3B170A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABC5F949-7E53-4604-BCC4-EE9A3B170A98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31B98410-6FB0-4CB9-9684-BC63CD41A7EC}
+	EndGlobalSection
+EndGlobal
