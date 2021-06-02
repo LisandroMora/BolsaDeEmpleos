@@ -56,7 +56,7 @@ namespace apiVacantes.Controllers
             {
                 context.Trabajos.Add(trabajo);
                 context.SaveChanges();
-                return CreatedAtRoute("GetGestor", new { id = trabajo.IdTrabajo }, trabajo);
+                return CreatedAtRoute("GetTrabajo", new { id = trabajo.IdTrabajo }, trabajo);
             }
             catch (Exception ex)
             {
@@ -74,7 +74,7 @@ namespace apiVacantes.Controllers
                 {
                     context.Entry(trabajo).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     context.SaveChanges();
-                    return CreatedAtRoute("GetGestor", new { id = trabajo.IdTrabajo }, trabajo);
+                    return CreatedAtRoute("GetTrabajo", new { id = trabajo.IdTrabajo }, trabajo);
                 }
                 else
                 {

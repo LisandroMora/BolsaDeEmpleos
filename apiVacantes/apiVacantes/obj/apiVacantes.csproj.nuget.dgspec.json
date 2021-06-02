@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\apiVacantes\\apiVacantes\\apiVacantes.csproj": {}
+    "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\apiVacantes\\apiVacantes\\apiVacantes.csproj": {
+    "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
+        "projectUniqueName": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
         "projectName": "apiVacantes",
-        "projectPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
+        "projectPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
         "packagesPath": "C:\\Users\\lisan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\apiVacantes\\apiVacantes\\obj\\",
+        "outputPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lisan\\AppData\\Roaming\\NuGet\\NuGet.Config",

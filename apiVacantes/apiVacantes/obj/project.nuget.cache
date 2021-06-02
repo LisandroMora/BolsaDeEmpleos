@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k14rjUcaP4jQsDv38h1lEF2uU85JN8xaQ+eGqYuXHrZP9xevmUpkI3jES0nchVvq4C2LndiIZU6a/qMlMd4gFQ==",
+  "dgSpecHash": "q6flyCCJZCRnKwIlczJ2x/3n6C4uJIwCG5mUHAPOd0fUhfq6jrzYx4rnaxf/EJue+m1oBytJ1dQCAAJ2AzVx7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
+  "projectFilePath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lisan\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\lisan\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
