@@ -1,0 +1,18 @@
+﻿@page "/crear-vacante"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>Create</h3>
+
+<FormVacante TextBtn="Crear Vacante" OnValidSubmit="@CrearVacante" Trabajos="@trabajos"></FormVacante>
+
+@code {
+
+    Trabajos trabajos = new Trabajos();
+
+    async Task CrearVacante()
+    {
+        await Http.PostAsJsonAsync("api/Vacantes", trabajos);
+        NavigationManager.NavigateTo("Vacantes");
+    }
+}

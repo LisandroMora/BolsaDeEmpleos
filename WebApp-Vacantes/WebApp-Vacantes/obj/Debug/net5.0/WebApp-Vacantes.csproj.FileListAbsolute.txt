@@ -290,3 +290,9 @@ C:\Users\Ian Emile\OneDrive\Escritorio\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vac
 C:\Users\Ian Emile\OneDrive\Escritorio\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\obj\Debug\net5.0\WebApp-Vacantes.pdb
 C:\Users\Ian Emile\OneDrive\Escritorio\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\obj\Debug\net5.0\WebApp-Vacantes.genruntimeconfig.cache
 C:\Users\Ian Emile\OneDrive\Escritorio\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\bin\Debug\net5.0\Microsoft.JSInterop.dll
+C:\Users\Ian Emile\OneDrive\Escritorio\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\obj\Debug\net5.0\RazorDeclaration\Pages\Vacantes\Create.razor.g.cs
+C:\Users\Ian Emile\OneDrive\Escritorio\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\obj\Debug\net5.0\RazorDeclaration\Pages\Vacantes\Edit.razor.g.cs
+C:\Users\Ian Emile\OneDrive\Escritorio\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\obj\Debug\net5.0\RazorDeclaration\Pages\Vacantes\FormVacante.razor.g.cs
+C:\Users\Ian Emile\OneDrive\Escritorio\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\obj\Debug\net5.0\Razor\Pages\Vacantes\Create.razor.g.cs
+C:\Users\Ian Emile\OneDrive\Escritorio\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\obj\Debug\net5.0\Razor\Pages\Vacantes\Edit.razor.g.cs
+C:\Users\Ian Emile\OneDrive\Escritorio\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\obj\Debug\net5.0\Razor\Pages\Vacantes\FormVacante.razor.g.cs

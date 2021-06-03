@@ -1,0 +1,25 @@
+﻿@page "/editar-vacante/{IdVacante:int}"
+@inject HttpClient Http
+@inject NavigationManager Navigator
+
+<h3>Edit</h3>
+
+<FormVacante TextBtn="Editar Vacante" OnValidSubmit="@EditarVacante" Trabajos="@trabajo"></FormVacante>
+
+@code {
+    [Parameter] public int IdVacante { get; set; }
+    Trabajos trabajo = new Trabajos();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        trabajo = await Http.GetFromJsonAsync<Trabajos>($"api/Vacantes/{IdVacante}");
+    }
+
+
+    async Task EditarVacante()
+    {
+        await Http.PutAsJsonAsync("api/Vacantes", trabajo);
+        Navigator.NavigateTo("Vacantes");
+    }
+
+}
