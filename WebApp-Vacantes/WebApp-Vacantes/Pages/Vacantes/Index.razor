@@ -1,0 +1,76 @@
+﻿@page "/Vacantes"
+@inject HttpClient Http
+@*@inject JSRuntime JS*@
+
+
+
+<h3>Vacantes</h3>
+
+<div>
+    <a class="btn btn-primary" href="crear-vacante">Post a Job</a>
+</div>
+
+
+@if (trabajos == null)
+{
+    <p>Cargando...</p>
+}
+else if (trabajos.Length == 0)
+{
+    <p>No hay vacantes disponibles</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ubicacion</th>
+                <th>Posicion</th>
+                <th>Empresa</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var trabajo in trabajos.Reverse())
+            {
+                <tr>
+                    <th>@trabajo.Ubicacion</th>
+                    <th>@trabajo.Posicion</th>
+                    <th>@trabajo.Empresa</th>
+                    <th>
+                        <a class="btn btn-success" href="/editar-vacante/@trabajo.IdTrabajo">Editar</a>
+                        <a class="btn btn-danger">Eliminar</a>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@code {
+    Trabajos[] trabajos { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarVacantes();
+    }
+
+    async Task CargarVacantes()
+    {
+        trabajos = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
+    }
+
+    //async Task BorrarVacante(int id)
+    //{
+    //    var Vacante = trabajos.First(x => x.IdTrabajo == id);
+    //    if (await JS.InvokeAsync<bool>("confirm", $"Seguro que desea eliminar la vacante {Vacante.Descripcion}?"))
+    //    {
+    //        await Http.DeleteAsync($"api/Vacantes/{Vacante.IdTrabajo}");
+    //        await CargarVacantes();
+    //    }
+    //}
+
+
+}

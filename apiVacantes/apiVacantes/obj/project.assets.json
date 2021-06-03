@@ -8575,19 +8575,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lisan\\.nuget\\packages\\": {}
+    "C:\\Users\\Ian Emile\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
+      "projectUniqueName": "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
       "projectName": "apiVacantes",
-      "projectPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
-      "packagesPath": "C:\\Users\\lisan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\obj\\",
+      "projectPath": "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
+      "packagesPath": "C:\\Users\\Ian Emile\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lisan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ian Emile\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8650,7 +8650,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

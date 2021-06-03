@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp-Vacantes", "WebApp-Vacantes\WebApp-Vacantes.csproj", "{4CAE66A9-2983-469A-A85A-361BF140277D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp-Vacantes", "WebApp-Vacantes\WebApp-Vacantes.csproj", "{4CAE66A9-2983-469A-A85A-361BF140277D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apiVacantes", "..\apiVacantes\apiVacantes\apiVacantes.csproj", "{E2D369DC-721B-4A9D-9DBA-45FA0AB1C706}"
 EndProject

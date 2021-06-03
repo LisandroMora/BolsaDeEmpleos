@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\WebApp-Vacantes\\WebApp-Vacantes\\WebApp-Vacantes.csproj": {}
+    "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\WebApp-Vacantes\\WebApp-Vacantes\\WebApp-Vacantes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj": {
+    "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
+        "projectUniqueName": "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
         "projectName": "apiVacantes",
-        "projectPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
-        "packagesPath": "C:\\Users\\lisan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\obj\\",
+        "projectPath": "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj",
+        "packagesPath": "C:\\Users\\Ian Emile\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lisan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ian Emile\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,6 +47,16 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [
@@ -67,21 +77,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\WebApp-Vacantes\\WebApp-Vacantes\\WebApp-Vacantes.csproj": {
+    "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\WebApp-Vacantes\\WebApp-Vacantes\\WebApp-Vacantes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\WebApp-Vacantes\\WebApp-Vacantes\\WebApp-Vacantes.csproj",
+        "projectUniqueName": "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\WebApp-Vacantes\\WebApp-Vacantes\\WebApp-Vacantes.csproj",
         "projectName": "WebApp-Vacantes",
-        "projectPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\WebApp-Vacantes\\WebApp-Vacantes\\WebApp-Vacantes.csproj",
-        "packagesPath": "C:\\Users\\lisan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\WebApp-Vacantes\\WebApp-Vacantes\\obj\\",
+        "projectPath": "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\WebApp-Vacantes\\WebApp-Vacantes\\WebApp-Vacantes.csproj",
+        "packagesPath": "C:\\Users\\Ian Emile\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\WebApp-Vacantes\\WebApp-Vacantes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lisan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ian Emile\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -95,8 +105,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj": {
-                "projectPath": "C:\\Users\\lisan\\OneDrive\\Escritorio\\TAREAS C5\\Prog 3\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj"
+              "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj": {
+                "projectPath": "C:\\Users\\Ian Emile\\OneDrive\\Escritorio\\BolsaDeEmpleos\\apiVacantes\\apiVacantes\\apiVacantes.csproj"
               }
             }
           }
@@ -130,6 +140,18 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[5.0.6, )"
+            },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
@@ -150,7 +172,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
