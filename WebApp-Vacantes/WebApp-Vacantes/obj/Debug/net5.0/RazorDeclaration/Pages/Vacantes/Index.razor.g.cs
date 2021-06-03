@@ -119,21 +119,25 @@ using Microsoft.AspNetCore.Http.Extensions;
         trabajos = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
     }
 
-    //async Task BorrarVacante(int id)
-    //{
-    //    var Vacante = trabajos.First(x => x.IdTrabajo == id);
-    //    if (await JS.InvokeAsync<bool>("confirm", $"Seguro que desea eliminar la vacante {Vacante.Descripcion}?"))
-    //    {
-    //        await Http.DeleteAsync($"api/Vacantes/{Vacante.IdTrabajo}");
-    //        await CargarVacantes();
-    //    }
-    //}
+
+
+
+    async Task BorrarVacante(int id)
+    {
+        var Vacante = trabajos.First(x => x.IdTrabajo == id);
+        if (await JS.InvokeAsync<bool>("confirm", $"Seguro que desea eliminar la vacante {Vacante.Descripcion}?"))
+        {
+            await Http.DeleteAsync($"api/Vacantes/{Vacante.IdTrabajo}");
+            await CargarVacantes();
+        }
+    }
 
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }

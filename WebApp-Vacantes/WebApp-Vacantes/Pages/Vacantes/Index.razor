@@ -1,6 +1,6 @@
 ﻿@page "/Vacantes"
 @inject HttpClient Http
-@*@inject JSRuntime JS*@
+@inject IJSRuntime JS
 
 
 
@@ -39,7 +39,7 @@ else
                     <th>@trabajo.Empresa</th>
                     <th>
                         <a class="btn btn-success" href="/editar-vacante/@trabajo.IdTrabajo">Editar</a>
-                        <a class="btn btn-danger">Eliminar</a>
+                        <button class="btn btn-danger" @onclick="@(() => BorrarVacante(trabajo.IdTrabajo))">Eliminar</button>
                     </th>
                 </tr>
             }
@@ -62,15 +62,18 @@ else
         trabajos = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
     }
 
-    //async Task BorrarVacante(int id)
-    //{
-    //    var Vacante = trabajos.First(x => x.IdTrabajo == id);
-    //    if (await JS.InvokeAsync<bool>("confirm", $"Seguro que desea eliminar la vacante {Vacante.Descripcion}?"))
-    //    {
-    //        await Http.DeleteAsync($"api/Vacantes/{Vacante.IdTrabajo}");
-    //        await CargarVacantes();
-    //    }
-    //}
+
+
+
+    async Task BorrarVacante(int id)
+    {
+        var Vacante = trabajos.First(x => x.IdTrabajo == id);
+        if (await JS.InvokeAsync<bool>("confirm", $"Seguro que desea eliminar la vacante {Vacante.Descripcion}?"))
+        {
+            await Http.DeleteAsync($"api/Vacantes/{Vacante.IdTrabajo}");
+            await CargarVacantes();
+        }
+    }
 
 
 }
