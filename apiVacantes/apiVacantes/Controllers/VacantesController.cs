@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using apiVacantes.Context;
 using apiVacantes.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -72,9 +73,9 @@ namespace apiVacantes.Controllers
             {
                 if (trabajo.IdTrabajo == id)
                 {
-                    context.Entry(trabajo).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    context.Entry(trabajo).State = EntityState.Modified;
                     context.SaveChanges();
-                    return CreatedAtRoute("GetTrabajo", new { id = trabajo.IdTrabajo }, trabajo);
+                    return NoContent();
                 }
                 else
                 {
@@ -98,7 +99,7 @@ namespace apiVacantes.Controllers
                 {
                     context.Trabajos.Remove(trabajo);
                     context.SaveChanges();
-                    return Ok(id);
+                    return NoContent();
                 }
                 else
                 {

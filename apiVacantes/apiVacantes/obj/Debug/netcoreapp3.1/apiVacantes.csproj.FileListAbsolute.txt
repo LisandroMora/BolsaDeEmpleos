@@ -61,7 +61,6 @@ C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\apiVacantes\apiVacantes\bin\
 C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\apiVacantes\apiVacantes\obj\Debug\netcoreapp3.1\apiVacantes.csprojAssemblyReference.cache
 C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\bin\Debug\netcoreapp3.1\apiVacantes.exe
 C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\bin\Debug\netcoreapp3.1\apiVacantes.deps.json
 C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\bin\Debug\netcoreapp3.1\apiVacantes.runtimeconfig.json
@@ -119,4 +118,5 @@ C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\a
 C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\obj\Debug\netcoreapp3.1\apiVacantes.dll
 C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\obj\Debug\netcoreapp3.1\apiVacantes.pdb
 C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\obj\Debug\netcoreapp3.1\apiVacantes.genruntimeconfig.cache
-C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\obj\Debug\netcoreapp3.1\apiVacantes.csprojAssemblyReference.cache
+C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\obj\Debug\netcoreapp3.1\apiVacantes.csproj.AssemblyReference.cache
+C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\apiVacantes\apiVacantes\obj\Debug\netcoreapp3.1\scopedcss\bundle\apiVacantes.styles.css
