@@ -118,7 +118,7 @@ using Microsoft.AspNetCore.Http.Extensions;
 
     async Task EditarVacante()
     {
-        await Http.PutAsJsonAsync("api/Vacantes", trabajo);
+        await Http.PutAsJsonAsync($"api/Vacantes/{IdVacante}", trabajo);
         Navigator.NavigateTo("Vacantes");
     }
 
