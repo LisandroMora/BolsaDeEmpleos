@@ -1,0 +1,57 @@
+﻿<EditForm Model="@Trabajos" OnValidSubmit="@OnValidSubmit">
+    <div class="form-group">
+        <div class="form-control">
+            <label>Categoria: </label>
+            <InputNumber @bind-Value="@Trabajos.IdCategoria"></InputNumber>
+            <ValidationMessage For="@(()=>Trabajos.IdCategoria)" />
+        </div>
+        <div class="form-control">
+            <label>Fecha: </label>
+            <InputDate @bind-Value="@Trabajos.Fecha"></InputDate>
+            <ValidationMessage For="@(()=>Trabajos.Fecha)" />
+        </div>
+        <div class="form-control">
+            <label>Ubicacion: </label>
+            <InputText @bind-Value="@Trabajos.Ubicacion"></InputText>
+            <ValidationMessage For="@(()=>Trabajos.Ubicacion)" />
+        </div>
+        <div class="form-control">
+            <label>Posicion: </label>
+            <InputText @bind-Value="@Trabajos.Posicion"></InputText>
+            <ValidationMessage For="@(()=>Trabajos.Posicion)" />
+        </div>
+        <div class="form-control">
+            <label>Empresa: </label>
+            <InputText @bind-Value="@Trabajos.Empresa"></InputText>
+            <ValidationMessage For="@(()=>Trabajos.Empresa)" />
+        </div>
+        <div class="form-control">
+            <label>Tipo: </label>
+            <InputNumber @bind-Value="@Trabajos.IdTipo"></InputNumber>
+            <ValidationMessage For="@(()=>Trabajos.IdTipo)" />
+        </div>
+        <div class="form-control">
+            <label>Descripcion: </label>
+            <InputText @bind-Value="@Trabajos.Descripcion"></InputText>
+            <ValidationMessage For="@(()=>Trabajos.Descripcion)" />
+        </div>
+        <div class="form-control">
+            <label>Email: </label>
+            <InputText @bind-Value="@Trabajos.Email"></InputText>
+            <ValidationMessage For="@(()=>Trabajos.Email)" />
+        </div>
+        <div class="form-control">
+            <label>Como Aplicar: </label>
+            <InputText @bind-Value="@Trabajos.ComoAplicar"></InputText>
+            <ValidationMessage For="@(()=>Trabajos.ComoAplicar)" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">@TextBtn</button>
+    <DataAnnotationsValidator />
+</EditForm>
+
+@code {
+    [Parameter] public Trabajos Trabajos { get; set; } = new Trabajos();
+    [Parameter] public string TextBtn { get; set; } = "Guardar Cambios";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+}
