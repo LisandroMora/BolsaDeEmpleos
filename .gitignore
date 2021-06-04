@@ -1,5 +1,8 @@
 apiVacantes\apiVacantes\appsettings.json
 
+
+apiVacantes/apiVacantes/obj/Debug/netcoreapp3.1/apiVacantes.csproj.AssemblyReference.cache
+
 # User-specific files
 *.rsuser
 *.suo
