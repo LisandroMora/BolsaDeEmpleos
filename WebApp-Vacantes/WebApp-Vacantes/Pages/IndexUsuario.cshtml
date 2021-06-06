@@ -5,7 +5,6 @@
 @using apiVacantes.Models
 
 @{
-
     Trabajos[] trabajos = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
     Categoria[] categorias = await Http.GetFromJsonAsync<Categoria[]>("/api/Categoria");
 }
@@ -83,7 +82,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => vacante.Empresa)
                         </td>
-                        <td class="col-2"><a href="" class="btn btn-outline-success w-75 mx-auto d-block">Ver Vacante</a></td>
+                        <td class="col-2"><a href="detalles/id=@vacante.IdTrabajo" class="btn btn-outline-success w-75 mx-auto d-block">Ver Vacante</a></td>
                     </tr>
 
                 }
