@@ -78,6 +78,8 @@ namespace WebApp_Vacantes
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
+
+
         }
     }
 }
