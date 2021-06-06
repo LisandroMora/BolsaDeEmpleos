@@ -386,3 +386,16 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+apiVacantes/apiVacantes/apiVacantes.csproj.user
+apiVacantes/apiVacantes/apiVacantes.csproj.user
+apiVacantes/apiVacantes/appsettings.json
+WebApp-Vacantes/.vs/WebApp-Vacantes/DesignTimeBuild/.dtbcache.v2
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/Razor/Pages/Vacantes/Create.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/Razor/Pages/Vacantes/Edit.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/Razor/Pages/Vacantes/Index.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/Razor/Pages/Vacantes/FormVacante.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/RazorDeclaration/Pages/Vacantes/Edit.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/RazorDeclaration/Pages/Vacantes/FormVacante.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/RazorDeclaration/Pages/Vacantes/Index.razor.g.cs
+apiVacantes/apiVacantes/apiVacantes.csproj.user
+apiVacantes/.vs/apiVacantes/DesignTimeBuild/.dtbcache.v2
