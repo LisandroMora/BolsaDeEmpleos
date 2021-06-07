@@ -86,10 +86,9 @@ for insert
 as
 begin
 
-insert into AspNetUserRoles(UserId,RoleId) select id, rol from inserted
-end
-
-ALTER TABLE aspnetusers add constraint defualtrol DEFAULT 'Postulante' for rol;
-
-
+	insert into AspNetUserRoles(UserId,RoleId) select id, rol from inserted
+	end
 go
+
+
+ALTER TABLE aspnetusers add constraint defualtrol DEFAULT 'postulante' for rol;
