@@ -64,3 +64,32 @@ Create table postulaciones(
 
 
 select * from Trabajos
+
+go
+
+
+/**/
+
+
+
+insert into AspNetRoles(Id,Name) values ('admin','admin') 
+insert into AspNetRoles(Id,Name) values ('postulante','postulante') 
+
+
+
+alter table aspnetusers add Rol nvarchar(450) foreign key references aspnetroles(id)
+go
+
+
+create trigger TR_agregar_rol on AspNetUsers
+for insert
+as
+begin
+
+insert into AspNetUserRoles(UserId,RoleId) select id, rol from inserted
+end
+
+ALTER TABLE aspnetusers add constraint defualtrol DEFAULT 'Postulante' for rol;
+
+
+go
