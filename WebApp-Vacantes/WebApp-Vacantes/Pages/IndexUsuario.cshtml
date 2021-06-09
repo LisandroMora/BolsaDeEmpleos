@@ -1,8 +1,9 @@
-﻿@page "/Inicio"
+﻿@page "/"
 @using System.Net.Http
 @using System.Net.Http.Json
 @inject HttpClient Http
 @using apiVacantes.Models
+
 
 @{
     Trabajos[] trabajos = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
@@ -38,8 +39,12 @@
                         <a class="nav-link" href="#">Lista de Vacantes</a>
                     </li>
                 </ul>
+                <div class="main d-flex">
+                    <div class="top-row px-4 auth justify-content-end">
+                        @Html.Partial("~/Areas/Identity/Pages/Shared/_LoginPartial.cshtml")
+                    </div>
+                </div>
             </div>
-        </div>
     </nav>
 
     <div id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
@@ -54,41 +59,41 @@
         </div>
     </div>
 
-    @foreach(var categoria in categorias)
+    @foreach (var categoria in categorias)
     {
-    <div class="container-fluid p-5">
-        <a href="" class="h3 text-decoration-none link-info mb-5">@categoria.Nombre</a>
-        <table class="table p-5 table-striped table-bordered table-hover mt-3">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Ubicacion</th>
-                    <th scope="col">Posicion</th>
-                    <th scope="col">Empresa</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var vacante in trabajos.Where(x=>x.IdCategoria == categoria.IdCategoria))
-                {
+        <div class="container-fluid p-5">
+            <a href="" class="h3 text-decoration-none link-info mb-5">@categoria.Nombre</a>
+            <table class="table p-5 table-striped table-bordered table-hover mt-3">
+                <thead class="table-dark">
                     <tr>
-                        <th scope="row">1</th>
-                        <td>
-                            @Html.DisplayFor(modelItem => vacante.Ubicacion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => vacante.Posicion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => vacante.Empresa)
-                        </td>
-                        <td class="col-2"><a href="detalles/id=@vacante.IdTrabajo" class="btn btn-outline-success w-75 mx-auto d-block">Ver Vacante</a></td>
+                        <th scope="col">#</th>
+                        <th scope="col">Ubicacion</th>
+                        <th scope="col">Posicion</th>
+                        <th scope="col">Empresa</th>
+                        <th></th>
                     </tr>
+                </thead>
+                <tbody>
+                    @foreach (var vacante in trabajos.Where(x => x.IdCategoria == categoria.IdCategoria))
+                    {
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>
+                                @Html.DisplayFor(modelItem => vacante.Ubicacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => vacante.Posicion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => vacante.Empresa)
+                            </td>
+                            <td class="col-2"><a href="detalles/id=@vacante.IdTrabajo" class="btn btn-outline-success w-75 mx-auto d-block">Ver Vacante</a></td>
+                        </tr>
 
-                }
-            </tbody>
-        </table>
-    </div>
+                    }
+                </tbody>
+            </table>
+        </div>
 
     }
 

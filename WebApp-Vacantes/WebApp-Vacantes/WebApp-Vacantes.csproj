@@ -21,8 +21,4 @@
     <ProjectReference Include="..\..\apiVacantes\apiVacantes\apiVacantes.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\User\" />
-  </ItemGroup>
-
 </Project>

@@ -399,3 +399,4 @@ WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/RazorDeclaration/Pages/Vacantes
 WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/RazorDeclaration/Pages/Vacantes/Index.razor.g.cs
 apiVacantes/apiVacantes/apiVacantes.csproj.user
 apiVacantes/.vs/apiVacantes/DesignTimeBuild/.dtbcache.v2
+*.v2
