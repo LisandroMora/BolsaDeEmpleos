@@ -57,6 +57,8 @@
     <button type="submit" class="btn btn-success">@TextBtn</button>
     <DataAnnotationsValidator />
 </EditForm>
+@attribute [Authorize(Roles = "admin, postulante")]
+
 
 @code {
     [Parameter] public Trabajos Trabajos { get; set; } = new Trabajos();

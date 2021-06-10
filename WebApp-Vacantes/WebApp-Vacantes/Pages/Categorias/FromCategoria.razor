@@ -1,4 +1,9 @@
-﻿<EditForm Model="@Categorias" OnValidSubmit="@OnValidSubmit">
+﻿@attribute [Authorize(Roles = "admin")]
+
+
+
+
+<EditForm Model="@Categorias" OnValidSubmit="@OnValidSubmit">
     <div class="form-group">
         <div class="form-control">
             <label>Nombre: </label>
