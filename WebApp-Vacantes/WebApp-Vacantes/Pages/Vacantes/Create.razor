@@ -1,6 +1,9 @@
 ﻿@page "/crear-vacante"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
+@using System.IO
+@using Microsoft.AspNetCore.Hosting
+@inject IWebHostEnvironment env
 @attribute [Authorize(Roles = "admin, postulante")]
 
 

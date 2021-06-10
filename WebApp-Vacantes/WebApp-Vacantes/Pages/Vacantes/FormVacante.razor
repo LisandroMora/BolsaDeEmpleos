@@ -1,4 +1,8 @@
-﻿<EditForm Model="@Trabajos" OnValidSubmit="@OnValidSubmit">
+﻿@using System.IO
+@using Microsoft.AspNetCore.Hosting
+@inject IWebHostEnvironment env
+
+<EditForm Model="@Trabajos" OnValidSubmit="@OnValidSubmit">
     <div class="form-group">
         <div class="form-control">
             <label>Categoria: </label>
@@ -45,6 +49,10 @@
             <InputText @bind-Value="@Trabajos.ComoAplicar"></InputText>
             <ValidationMessage For="@(()=>Trabajos.ComoAplicar)" />
         </div>
+        <div class="form-control">
+            <label>Como Aplicar: </label>
+            <InputFile OnChange="@OnInputFileChange" @bind-Value="selectedFiles"/>
+        </div>
     </div>
     <button type="submit" class="btn btn-success">@TextBtn</button>
     <DataAnnotationsValidator />
@@ -56,4 +64,26 @@
     [Parameter] public Trabajos Trabajos { get; set; } = new Trabajos();
     [Parameter] public string TextBtn { get; set; } = "Guardar Cambios";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public IBrowserFile selectedFiles { get; set; }
+
+
+    private void OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        selectedFiles = e.File;
+        this.StateHasChanged();
+        OnSubmitFile();
+    }
+
+    private async void OnSubmitFile()
+    {
+        Stream stream = selectedFiles.OpenReadStream();
+        var path = $"{env.WebRootPath}\\logos\\{selectedFiles.Name}";
+        Trabajos.UrlString = selectedFiles.Name;
+        FileStream fs = File.Create(path);
+        await stream.CopyToAsync(fs);
+        stream.Close();
+        fs.Close();
+        this.StateHasChanged();
+    }
+
 }

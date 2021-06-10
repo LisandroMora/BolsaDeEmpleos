@@ -401,3 +401,13 @@ apiVacantes/apiVacantes/apiVacantes.csproj.user
 apiVacantes/.vs/apiVacantes/DesignTimeBuild/.dtbcache.v2
 *.v2
 *.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/Razor/Pages/Vacantes/Create.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/Razor/Pages/Vacantes/Edit.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/Razor/Pages/Vacantes/FormVacante.razor.g.cs
+*.jpeg
+*.png
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/Razor/Pages/Vacantes/Index.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/RazorDeclaration/Pages/Vacantes/Create.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/RazorDeclaration/Pages/Vacantes/Edit.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/RazorDeclaration/Pages/Vacantes/FormVacante.razor.g.cs
+WebApp-Vacantes/WebApp-Vacantes/obj/Debug/net5.0/RazorDeclaration/Pages/Vacantes/Index.razor.g.cs
