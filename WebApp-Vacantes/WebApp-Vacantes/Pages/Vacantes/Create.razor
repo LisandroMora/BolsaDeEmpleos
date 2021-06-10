@@ -1,6 +1,8 @@
 ﻿@page "/crear-vacante"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
+@attribute [Authorize(Roles = "admin, postulante")]
+
 
 <h3>Create</h3>
 

@@ -1,6 +1,8 @@
 ﻿@page "/editar-vacante/{IdVacante:int}"
 @inject HttpClient Http
 @inject NavigationManager Navigator
+@attribute [Authorize(Roles = "admin, postulante")]
+
 
 <h3>Edit</h3>
 
