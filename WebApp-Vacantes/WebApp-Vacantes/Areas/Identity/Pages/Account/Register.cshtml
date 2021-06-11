@@ -1,0 +1,44 @@
+﻿@page
+@model RegisterModel
+@{
+    Layout = "_Layout";
+}
+
+
+
+<div class="d-flex justify-content-center p-5">
+    <div class="row rounded shadow-lg bg-light">
+        <div class="col-sm-7 px-5">
+            <h1 class="text-center my-4">Crear nueva cuenta</h1>
+            <hr />
+            <section class="mt-5">
+                <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.ConfirmPassword"></label>
+                        <input asp-for="Input.ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-75 mx-auto btn-block btn-lg mt-5">Registrar</button>
+                </form>
+            </section>
+        </div>
+        <div class="col p-0 m-0">
+            <img src="~/img/registro.jpg" alt="..." class="img-fluid w-100 rounded-right" />
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
