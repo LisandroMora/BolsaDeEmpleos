@@ -1,6 +1,8 @@
 ﻿@using System.IO
 @using Microsoft.AspNetCore.Hosting
 @inject IWebHostEnvironment env
+@attribute [Authorize(Roles = "admin, postulante")]
+
 
 <EditForm Model="@Trabajos" OnValidSubmit="@OnValidSubmit">
     <div class="form-group">
@@ -50,14 +52,13 @@
             <ValidationMessage For="@(()=>Trabajos.ComoAplicar)" />
         </div>
         <div class="form-control">
-            <label>Como Aplicar: </label>
-            <InputFile OnChange="@OnInputFileChange" @bind-Value="selectedFiles"/>
+            <label>Logo: </label>
+            <InputFile OnChange="@OnInputFileChange" @bind-Value="selectedFiles" />
         </div>
     </div>
     <button type="submit" class="btn btn-success">@TextBtn</button>
     <DataAnnotationsValidator />
 </EditForm>
-@attribute [Authorize(Roles = "admin, postulante")]
 
 
 @code {
