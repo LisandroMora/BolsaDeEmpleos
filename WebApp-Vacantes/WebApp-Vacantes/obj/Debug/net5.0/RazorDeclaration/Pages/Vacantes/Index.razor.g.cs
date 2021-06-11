@@ -13,98 +13,98 @@ namespace WebApp_Vacantes.Pages.Vacantes
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 1 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 2 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 3 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 4 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 5 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 6 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 7 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 8 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using WebApp_Vacantes;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 9 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using WebApp_Vacantes.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 10 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using apiVacantes.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 11 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 12 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using Microsoft.AspNetCore.Http.Extensions;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+#line 13 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
 using Microsoft.AspNetCore.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\Index.razor"
+#line 5 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\Index.razor"
            [Authorize(Roles = "admin, postulante")]
 
 #line default
@@ -119,7 +119,7 @@ using Microsoft.AspNetCore.Http;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "E:\prog3\otraveproyecto web\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\Index.razor"
+#line 53 "C:\Users\Marlon\Desktop\Bolsa\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\Index.razor"
        
     Trabajos[] trabajos { get; set; }
 

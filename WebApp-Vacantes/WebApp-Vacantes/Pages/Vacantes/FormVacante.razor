@@ -1,13 +1,19 @@
 ﻿@using System.IO
 @using Microsoft.AspNetCore.Hosting
+@using System.Web.Mvc
+@inject HttpClient Http 
 @inject IWebHostEnvironment env
 
 <EditForm Model="@Trabajos" OnValidSubmit="@OnValidSubmit">
     <div class="form-group">
         <div class="form-control">
             <label>Categoria: </label>
-            <InputNumber @bind-Value="@Trabajos.IdCategoria"></InputNumber>
-            <ValidationMessage For="@(()=>Trabajos.IdCategoria)" />
+            <InputSelect @bind-Value="@Trabajos.IdCategoria">
+                @foreach (var dept in categoriasList)
+                {
+                    <option value="@dept.IdCategoria">@dept.Nombre</option>
+                }
+            </InputSelect>
         </div>
         <div class="form-control">
             <label>Fecha: </label>
@@ -57,15 +63,49 @@
     <button type="submit" class="btn btn-success">@TextBtn</button>
     <DataAnnotationsValidator />
 </EditForm>
-@attribute [Authorize(Roles = "admin, postulante")]
+@*@attribute [Authorize(Roles = "admin, postulante")]*@
 
 
 @code {
+
     [Parameter] public Trabajos Trabajos { get; set; } = new Trabajos();
     [Parameter] public string TextBtn { get; set; } = "Guardar Cambios";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
     [Parameter] public IBrowserFile selectedFiles { get; set; }
 
+    Categoria[] categorias { get; set; }
+
+    List<Categoria> categoriasList = new List<Categoria>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarCategorias();
+    }
+
+    async Task CargarCategorias()
+    {
+        categorias = await Http.GetFromJsonAsync<Categoria[]>("/api/Categoria");
+        int k = 0;
+
+        categoriasList = new List<Categoria>(categorias);
+
+        //foreach (Categoria items in categoriasList)
+        //{
+        //    categoriasList.Add(categorias[k]);
+        //    k++;
+        //}
+
+        //CategoriasList = categorias.ToList().ConvertAll(categoria =>
+        //{
+        //    return new SelectListItem()
+        //    {
+        //        Text = categoria.Nombre.ToString(),
+        //        Value = categoria.IdCategoria.ToString(),
+        //        Selected = false
+        //    };
+        //});
+    }
 
     private void OnInputFileChange(InputFileChangeEventArgs e)
     {

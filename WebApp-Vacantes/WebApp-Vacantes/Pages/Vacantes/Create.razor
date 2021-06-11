@@ -3,8 +3,9 @@
 @inject NavigationManager NavigationManager
 @using System.IO
 @using Microsoft.AspNetCore.Hosting
+@*@using System.Web.Mvc*@
 @inject IWebHostEnvironment env
-@attribute [Authorize(Roles = "admin, postulante")]
+@*@attribute [Authorize(Roles = "admin, postulante")]*@
 
 
 <h3>Create</h3>
@@ -14,7 +15,7 @@
 @code {
 
     Trabajos trabajos = new Trabajos();
-
+    
     async Task CrearVacante()
     {
         await Http.PostAsJsonAsync("api/Vacantes", trabajos);
