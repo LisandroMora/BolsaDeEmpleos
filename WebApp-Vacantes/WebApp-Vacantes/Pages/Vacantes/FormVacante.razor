@@ -1,8 +1,10 @@
 ﻿@using System.IO
 @using Microsoft.AspNetCore.Hosting
-@using System.Web.Mvc
-@inject HttpClient Http 
+@inject HttpClient Http
 @inject IWebHostEnvironment env
+@attribute [Authorize(Roles = "admin, postulante")]
+
+
 
 <EditForm Model="@Trabajos" OnValidSubmit="@OnValidSubmit">
     <div class="form-group">
@@ -56,14 +58,13 @@
             <ValidationMessage For="@(()=>Trabajos.ComoAplicar)" />
         </div>
         <div class="form-control">
-            <label>Como Aplicar: </label>
-            <InputFile OnChange="@OnInputFileChange" @bind-Value="selectedFiles"/>
+            <label>Logo: </label>
+            <InputFile OnChange="@OnInputFileChange"/>
         </div>
     </div>
     <button type="submit" class="btn btn-success">@TextBtn</button>
     <DataAnnotationsValidator />
 </EditForm>
-@*@attribute [Authorize(Roles = "admin, postulante")]*@
 
 
 @code {
@@ -86,25 +87,7 @@
     async Task CargarCategorias()
     {
         categorias = await Http.GetFromJsonAsync<Categoria[]>("/api/Categoria");
-        int k = 0;
-
         categoriasList = new List<Categoria>(categorias);
-
-        //foreach (Categoria items in categoriasList)
-        //{
-        //    categoriasList.Add(categorias[k]);
-        //    k++;
-        //}
-
-        //CategoriasList = categorias.ToList().ConvertAll(categoria =>
-        //{
-        //    return new SelectListItem()
-        //    {
-        //        Text = categoria.Nombre.ToString(),
-        //        Value = categoria.IdCategoria.ToString(),
-        //        Selected = false
-        //    };
-        //});
     }
 
     private void OnInputFileChange(InputFileChangeEventArgs e)
