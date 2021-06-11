@@ -1,10 +1,13 @@
 ﻿@page "/detalles/id={IdVacante:int}"
 @inject HttpClient Http
-@using System.Net.Http
-@using System.Net.Http.Json
-@using apiVacantes.Models
-@using Microsoft.AspNetCore.Http.Extensions
+@using System.IO;
+@using System.Net.Http;
+@using System.Net.Http.Json;
+@using apiVacantes.Models;
+@using Microsoft.AspNetCore.Http.Extensions;
 @using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Hosting
+@inject IWebHostEnvironment env
 @attribute [AllowAnonymous]
 
 
@@ -16,6 +19,15 @@
     Layout = null;
     Trabajos trabajo = await Http.GetFromJsonAsync<Trabajos>($"api/Vacantes/{id}");
     Categoria categoria = await Http.GetFromJsonAsync<Categoria>($"/api/Categoria/{trabajo.IdCategoria}");
+
+    var path = $"{env.WebRootPath}\\logos\\{trabajo.UrlString}";
+
+
+    if (System.IO.File.Exists(path) == false)
+    {
+        trabajo.UrlString = "logoVRD.png";
+    };
+
     string tipo = "";
     if (trabajo.IdTipo == 1) tipo = "Full-Time";
     else if (trabajo.IdTipo == 2) tipo = "Part-Time";
@@ -59,7 +71,7 @@
     <div class="card my-3 mx-auto d-flex mt-5" style="max-width: 1300px;">
         <div class="row g-0">
             <div class="col-md-4 d-flex justify-content-center">
-                <img src="~/logos/@trabajo.UrlString" alt="Logo" class="img-fluid p-4">
+                <img src="~/logos/@trabajo.UrlString" alt="Logo" class="img-fluid p-4 rounded" style="border-radius:300px">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
