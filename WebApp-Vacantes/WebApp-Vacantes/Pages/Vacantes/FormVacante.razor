@@ -1,13 +1,21 @@
 ﻿@using System.IO
 @using Microsoft.AspNetCore.Hosting
+@inject HttpClient Http
 @inject IWebHostEnvironment env
+@attribute [Authorize(Roles = "admin, postulante")]
+
+
 
 <EditForm Model="@Trabajos" OnValidSubmit="@OnValidSubmit">
     <div class="form-group">
         <div class="form-control">
             <label>Categoria: </label>
-            <InputNumber @bind-Value="@Trabajos.IdCategoria"></InputNumber>
-            <ValidationMessage For="@(()=>Trabajos.IdCategoria)" />
+            <InputSelect @bind-Value="@Trabajos.IdCategoria">
+                @foreach (var dept in categoriasList)
+                {
+                    <option value="@dept.IdCategoria">@dept.Nombre</option>
+                }
+            </InputSelect>
         </div>
         <div class="form-control">
             <label>Fecha: </label>
@@ -31,8 +39,11 @@
         </div>
         <div class="form-control">
             <label>Tipo: </label>
-            <InputNumber @bind-Value="@Trabajos.IdTipo"></InputNumber>
-            <ValidationMessage For="@(()=>Trabajos.IdTipo)" />
+            <InputRadioGroup Name="Tipo" @bind-Value="Trabajos.IdTipo">
+                <InputRadio Name="Tipo" Value="1"/>Full-Time
+                <InputRadio Name="Tipo" Value="2"/>Part-Time
+                <InputRadio Name="Tipo" Value="3"/>Freelancer
+            </InputRadioGroup>
         </div>
         <div class="form-control">
             <label>Descripcion: </label>
@@ -50,22 +61,37 @@
             <ValidationMessage For="@(()=>Trabajos.ComoAplicar)" />
         </div>
         <div class="form-control">
-            <label>Como Aplicar: </label>
-            <InputFile OnChange="@OnInputFileChange" @bind-Value="selectedFiles"/>
+            <label>Logo: </label>
+            <InputFile OnChange="@OnInputFileChange"/>
         </div>
     </div>
     <button type="submit" class="btn btn-success">@TextBtn</button>
     <DataAnnotationsValidator />
 </EditForm>
-@attribute [Authorize(Roles = "admin, postulante")]
 
 
 @code {
+
     [Parameter] public Trabajos Trabajos { get; set; } = new Trabajos();
     [Parameter] public string TextBtn { get; set; } = "Guardar Cambios";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
     [Parameter] public IBrowserFile selectedFiles { get; set; }
 
+    Categoria[] categorias { get; set; }
+
+    List<Categoria> categoriasList = new List<Categoria>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarCategorias();
+    }
+
+    async Task CargarCategorias()
+    {
+        categorias = await Http.GetFromJsonAsync<Categoria[]>("/api/Categoria");
+        categoriasList = new List<Categoria>(categorias);
+    }
 
     private void OnInputFileChange(InputFileChangeEventArgs e)
     {

@@ -118,7 +118,7 @@ using Microsoft.AspNetCore.Hosting;
 #line hidden
 #nullable disable
 #nullable restore
-#line 60 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
+#line 5 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
            [Authorize(Roles = "admin, postulante")]
 
 #line default
@@ -132,13 +132,29 @@ using Microsoft.AspNetCore.Hosting;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 63 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
+#line 73 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
        
+
     [Parameter] public Trabajos Trabajos { get; set; } = new Trabajos();
     [Parameter] public string TextBtn { get; set; } = "Guardar Cambios";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
     [Parameter] public IBrowserFile selectedFiles { get; set; }
 
+    Categoria[] categorias { get; set; }
+
+    List<Categoria> categoriasList = new List<Categoria>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarCategorias();
+    }
+
+    async Task CargarCategorias()
+    {
+        categorias = await Http.GetFromJsonAsync<Categoria[]>("/api/Categoria");
+        categoriasList = new List<Categoria>(categorias);
+    }
 
     private void OnInputFileChange(InputFileChangeEventArgs e)
     {
@@ -164,6 +180,7 @@ using Microsoft.AspNetCore.Hosting;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebHostEnvironment env { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591
