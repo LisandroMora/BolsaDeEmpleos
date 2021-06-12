@@ -101,6 +101,20 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
 #nullable restore
+#line 14 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+using Radzen;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\_Imports.razor"
+using Radzen.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 5 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\Index.razor"
            [Authorize(Roles = "admin, postulante")]
 
