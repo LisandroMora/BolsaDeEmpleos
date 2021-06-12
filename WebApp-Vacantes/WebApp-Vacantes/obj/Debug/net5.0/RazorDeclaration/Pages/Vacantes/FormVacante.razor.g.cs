@@ -118,7 +118,14 @@ using Microsoft.AspNetCore.Hosting;
 #line hidden
 #nullable disable
 #nullable restore
-#line 60 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
+#line 4 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
+           [Authorize(Roles = "admin, postulante")]
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 61 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
            [Authorize(Roles = "admin, postulante")]
 
 #line default
@@ -132,7 +139,7 @@ using Microsoft.AspNetCore.Hosting;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 63 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
+#line 64 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
        
     [Parameter] public Trabajos Trabajos { get; set; } = new Trabajos();
     [Parameter] public string TextBtn { get; set; } = "Guardar Cambios";
