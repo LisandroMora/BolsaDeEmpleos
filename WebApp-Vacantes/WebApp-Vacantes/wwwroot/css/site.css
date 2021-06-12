@@ -42,9 +42,19 @@ a, .btn-link {
     z-index: 1000;
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+.font {
+    font-family: 'Suez One', serif;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.banner {
+    opacity: 0.8;
+}
