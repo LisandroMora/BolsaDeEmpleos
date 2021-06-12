@@ -14,86 +14,45 @@
     int BeforeID = url.IndexOf("=");
 
     int id = Convert.ToInt32(url.Substring(BeforeID + 1, (url.Length - BeforeID) - 1));
-    Layout = null;
     Trabajos[] trabajo = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
     Categoria categoria = await Http.GetFromJsonAsync<Categoria>($"/api/Categoria/{id}");
 }
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vacantes RD</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
-<body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-4 sticky-top shadow">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Vacantes RD</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Lista de Vacantes</a>
-                    </li>
-                </ul>
-                <div class="main d-flex">
-                    <div class="top-row px-4 auth justify-content-end">
-                        @Html.Partial("~/Areas/Identity/Pages/Shared/_LoginPartial.cshtml")
-                    </div>
-                </div>
-            </div>
-    </nav>
-
-    <div class="container-fluid p-5">
-        <a href="" class="h3 text-decoration-none link-info mb-5">@categoria.Nombre</a>
-        <table class="table p-5 table-striped table-bordered table-hover mt-3">
-            <thead class="table-dark">
+<div class="container-fluid p-5">
+    <a href="" class="h3 text-decoration-none link-info mb-5">@categoria.Nombre</a>
+    <table class="table p-5 table-striped table-bordered table-hover mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ubicacion</th>
+                <th scope="col">Posicion</th>
+                <th scope="col">Empresa</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vacante in trabajo.Where(x => x.IdCategoria == categoria.IdCategoria))
+            {
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Ubicacion</th>
-                    <th scope="col">Posicion</th>
-                    <th scope="col">Empresa</th>
-                    <th></th>
+                    <th scope="row">1</th>
+                    <td>
+                        @Html.DisplayFor(modelItem => vacante.Ubicacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => vacante.Posicion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => vacante.Empresa)
+                    </td>
+                    <td class="col-2"><a href="../detalles/id=@vacante.IdTrabajo" class="btn btn-outline-success w-75 mx-auto d-block">Ver Vacante</a></td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var vacante in trabajo.Where(x => x.IdCategoria == categoria.IdCategoria))
-                {
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>
-                            @Html.DisplayFor(modelItem => vacante.Ubicacion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => vacante.Posicion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => vacante.Empresa)
-                        </td>
-                        <td class="col-2"><a href="../detalles/id=@vacante.IdTrabajo" class="btn btn-outline-success w-75 mx-auto d-block">Ver Vacante</a></td>
-                    </tr>
 
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
+</div>
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-</body>
-</html>
