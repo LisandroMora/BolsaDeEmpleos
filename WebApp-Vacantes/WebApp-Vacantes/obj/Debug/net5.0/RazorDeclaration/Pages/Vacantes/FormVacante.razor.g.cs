@@ -132,7 +132,7 @@ using Microsoft.AspNetCore.Hosting;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 70 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
+#line 73 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
        
 
     [Parameter] public Trabajos Trabajos { get; set; } = new Trabajos();

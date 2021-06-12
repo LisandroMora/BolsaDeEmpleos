@@ -39,8 +39,11 @@
         </div>
         <div class="form-control">
             <label>Tipo: </label>
-            <InputNumber @bind-Value="@Trabajos.IdTipo"></InputNumber>
-            <ValidationMessage For="@(()=>Trabajos.IdTipo)" />
+            <InputRadioGroup Name="Tipo" @bind-Value="Trabajos.IdTipo">
+                <InputRadio Name="Tipo" Value="1"/>Full-Time
+                <InputRadio Name="Tipo" Value="2"/>Part-Time
+                <InputRadio Name="Tipo" Value="3"/>Freelancer
+            </InputRadioGroup>
         </div>
         <div class="form-control">
             <label>Descripcion: </label>
