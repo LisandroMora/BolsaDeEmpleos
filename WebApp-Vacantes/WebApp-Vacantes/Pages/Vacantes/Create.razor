@@ -16,6 +16,6 @@
     async Task CrearVacante()
     {
         await Http.PostAsJsonAsync("api/Vacantes", trabajos);
-        NavigationManager.NavigateTo("/");
+        NavigationManager.NavigateTo("/?");
     }
 }
