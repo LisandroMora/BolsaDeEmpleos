@@ -155,7 +155,7 @@ using Microsoft.AspNetCore.Hosting;
     async Task CrearVacante()
     {
         await Http.PostAsJsonAsync("api/Vacantes", trabajos);
-        NavigationManager.NavigateTo("Vacantes");
+        NavigationManager.NavigateTo("/");
     }
 
 #line default
