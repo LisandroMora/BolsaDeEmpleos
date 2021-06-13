@@ -12,6 +12,7 @@
 @section Styles
 {
     <link href="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
 } 
 
 @{
@@ -26,9 +27,7 @@
 
 
 <div class="container-fluid p-5">
-    <center>
-        <a href="" class="h3 text-decoration-none link-info mb-5" style="font-size:50px">@categoria.Nombre</a>
-    </center>
+        <h1 class="h3 text-decoration-none mb-5 text-center" style="font-size:50px">@categoria.Nombre</h1>
        
 
    
@@ -36,7 +35,6 @@
         <table id="tabla" class="table p-5 table-striped table-bordered table-hover mt-3">
             <thead class="table-dark">
 
-                <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
 
                 <tr>
                     <th scope="col">#</th>
