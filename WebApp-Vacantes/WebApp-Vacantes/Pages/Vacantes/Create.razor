@@ -3,12 +3,9 @@
 @inject NavigationManager NavigationManager
 @using System.IO
 @using Microsoft.AspNetCore.Hosting
-@*@using System.Web.Mvc*@
 @inject IWebHostEnvironment env
-@*@attribute [Authorize(Roles = "admin, postulante")]*@
+@attribute [Authorize(Roles = "admin")]
 
-
-<h3>Create</h3>
 
 <FormVacante TextBtn="Crear Vacante" OnValidSubmit="@CrearVacante" Trabajos="@trabajos"></FormVacante>
 
@@ -19,6 +16,6 @@
     async Task CrearVacante()
     {
         await Http.PostAsJsonAsync("api/Vacantes", trabajos);
-        NavigationManager.NavigateTo("Vacantes");
+        NavigationManager.NavigateTo("/");
     }
 }

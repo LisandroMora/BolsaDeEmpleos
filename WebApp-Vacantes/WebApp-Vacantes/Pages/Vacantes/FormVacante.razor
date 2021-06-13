@@ -5,69 +5,114 @@
 @attribute [Authorize(Roles = "admin, postulante")]
 
 
+<style>
+    form .row {
+        margin-bottom: 16px;
+    }
+</style>
 
-<EditForm Model="@Trabajos" OnValidSubmit="@OnValidSubmit">
-    <div class="form-group">
-        <div class="form-control">
-            <label>Categoria: </label>
-            <InputSelect @bind-Value="@Trabajos.IdCategoria">
-                @foreach (var dept in categoriasList)
-                {
-                    <option value="@dept.IdCategoria">@dept.Nombre</option>
-                }
-            </InputSelect>
-        </div>
-        <div class="form-control">
-            <label>Fecha: </label>
-            <InputDate @bind-Value="@Trabajos.Fecha"></InputDate>
-            <ValidationMessage For="@(()=>Trabajos.Fecha)" />
-        </div>
-        <div class="form-control">
-            <label>Ubicacion: </label>
-            <InputText @bind-Value="@Trabajos.Ubicacion"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.Ubicacion)" />
-        </div>
-        <div class="form-control">
-            <label>Posicion: </label>
-            <InputText @bind-Value="@Trabajos.Posicion"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.Posicion)" />
-        </div>
-        <div class="form-control">
-            <label>Empresa: </label>
-            <InputText @bind-Value="@Trabajos.Empresa"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.Empresa)" />
-        </div>
-        <div class="form-control">
-            <label>Tipo: </label>
-            <InputRadioGroup Name="Tipo" @bind-Value="Trabajos.IdTipo">
-                <InputRadio Name="Tipo" Value="1"/>Full-Time
-                <InputRadio Name="Tipo" Value="2"/>Part-Time
-                <InputRadio Name="Tipo" Value="3"/>Freelancer
-            </InputRadioGroup>
-        </div>
-        <div class="form-control">
-            <label>Descripcion: </label>
-            <InputText @bind-Value="@Trabajos.Descripcion"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.Descripcion)" />
-        </div>
-        <div class="form-control">
-            <label>Email: </label>
-            <InputText @bind-Value="@Trabajos.Email"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.Email)" />
-        </div>
-        <div class="form-control">
-            <label>Como Aplicar: </label>
-            <InputText @bind-Value="@Trabajos.ComoAplicar"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.ComoAplicar)" />
-        </div>
-        <div class="form-control">
-            <label>Logo: </label>
-            <InputFile OnChange="@OnInputFileChange"/>
-        </div>
+
+<RadzenTemplateForm Data="@Trabajos" onsubmit="@OnValidSubmit">
+    <div class="row">
+        <RadzenFieldset Text="Fomulario de Vacante">
+            <div class="row">
+                <div class="col-md-3 align-items-center d-flex">
+                    <RadzenLabel Text="Categoria: " />
+                </div>
+                <div class="col-md-9">
+                    <RadzenDropDown @bind-Value="Trabajos.IdCategoria" AllowClear="true" Placeholder="Seleccione una categoria" Data="@categoriasList" style="width: 100%;" TextProperty="Nombre" ValueProperty="IdCategoria" Name="IdCategoria">
+                    </RadzenDropDown>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 align-items-center d-flex">
+                    <RadzenLabel Text="Ubicacion: " />
+                </div>
+                <div class="col-md-9">
+                    <RadzenTextBox style="width: 100%;" Name="Ubicacion" @bind-Value="Trabajos.Ubicacion" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 align-items-center d-flex">
+                    <RadzenLabel Text="Fecha: " />
+                </div>
+                <div class="col-md-9">
+                    <RadzenDatePicker style="width: 100%;" Name="Fecha" @bind-Value="Trabajos.Fecha" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 align-items-center d-flex">
+                    <RadzenLabel Text="Tipo: " />
+                </div>
+                <div class="col-md-9 d-flex justify-content-between align-items-center">
+                    <InputRadioGroup Name="Tipo" @bind-Value="@Trabajos.IdTipo">
+                        <InputRadio Name="Tipo" Value="1" />Full-Time
+                        <InputRadio Name="Tipo" Value="2" />Part-Time
+                        <InputRadio Name="Tipo" Value="3" />Freelancer
+                    </InputRadioGroup>
+                </div>
+            </div>
+            <div class="row">
+                <div class="align-items-center d-flex col-md-3">
+                    <RadzenLabel Text="Posicion: " />
+                </div>
+                <div class="col-md-3">
+                    <RadzenTextBox style="width: 100%;" Name="OrderDate" @bind-Value="@Trabajos.Posicion" />
+                </div>
+                <div class="align-items-center d-flex col-md-2">
+                    <RadzenLabel Text="Empresa: " />
+                </div>
+                <div class="col-md-4">
+                    <RadzenTextBox style="width: 100%;" Name="ShipDate" @bind-Value="@Trabajos.Empresa" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="align-items-center d-flex col-md-3">
+                    <RadzenLabel Text="Email" />
+                </div>
+                <div class="col-md-9">
+                    <RadzenTextBox style="width: 100%;" Name="Email" @bind-Value=@Trabajos.Email />
+                    <RadzenRequiredValidator Component="Email" Text="Email es requirido" Popup=@popup Style="position: absolute" />
+                    <RadzenEmailValidator Component="Email" Text="El email no es valido" Popup=@popup Style="position: absolute" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="align-items-center d-flex col-md-3">
+                    <RadzenLabel Text="Como aplicar: " />
+                </div>
+                <div class="col-md-9">
+                    <RadzenTextBox Placeholder="Ej: Mandar CV al email" style="width: 100%;" Name="Register" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="align-items-center d-flex col-md-3">
+                    <RadzenLabel Text="URL: " />
+                </div>
+                <div class="col-md-9">
+                    <RadzenTextBox Placeholder="URL de la vacante" style="width: 100%;" Name="Register" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="align-items-center d-flex col-md-3">
+                    <RadzenLabel Text="Logo: " />
+                </div>
+                <div class="col-md-9">
+                    <InputFile OnChange="@OnInputFileChange" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="align-items-center d-flex col-md-3">
+                    <RadzenLabel Text="Descripcion: " />
+                </div>
+                <div class="col-md-9">
+                    <RadzenTextArea style="width: 100%;" Placeholder="Ingrese la descripcion de la vacante..." @bind-Value="@Trabajos.Descripcion" />
+                </div>
+            </div>
+        </RadzenFieldset>
     </div>
-    <button type="submit" class="btn btn-success">@TextBtn</button>
+    <button type="submit" class="btn btn-success btn-block w-75 mx-auto">@TextBtn</button>
     <DataAnnotationsValidator />
-</EditForm>
+</RadzenTemplateForm>
 
 
 @code {
@@ -80,6 +125,8 @@
     Categoria[] categorias { get; set; }
 
     List<Categoria> categoriasList = new List<Categoria>();
+
+    bool popup;
 
 
     protected override async Task OnInitializedAsync()

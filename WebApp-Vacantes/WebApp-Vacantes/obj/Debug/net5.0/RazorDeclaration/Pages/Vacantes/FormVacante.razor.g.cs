@@ -146,7 +146,7 @@ using Microsoft.AspNetCore.Hosting;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 73 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
+#line 118 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\FormVacante.razor"
        
 
     [Parameter] public Trabajos Trabajos { get; set; } = new Trabajos();
@@ -157,6 +157,8 @@ using Microsoft.AspNetCore.Hosting;
     Categoria[] categorias { get; set; }
 
     List<Categoria> categoriasList = new List<Categoria>();
+
+    bool popup;
 
 
     protected override async Task OnInitializedAsync()
