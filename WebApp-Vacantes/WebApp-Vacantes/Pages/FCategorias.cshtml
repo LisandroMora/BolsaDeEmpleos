@@ -23,6 +23,7 @@
     Trabajos[] trabajo = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
     Categoria categoria = await Http.GetFromJsonAsync<Categoria>($"/api/Categoria/{id}");
 
+    int iterador = 0;
 
     ViewBag.Title = $"Vacantes {categoria.Nombre}";
 }
@@ -51,7 +52,7 @@
                 @foreach (var vacante in trabajo.Where(x => x.IdCategoria == categoria.IdCategoria))
                 {
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">@iterador</th>
                         <td>
                             @Html.DisplayFor(modelItem => vacante.Ubicacion)
                         </td>
@@ -63,7 +64,7 @@
                         </td>
                         <td class="col-2"><a href="../detalles/id=@vacante.IdTrabajo" class="btn btn-outline-success w-75 mx-auto d-block">Ver Vacante</a></td>
                     </tr>
-
+                    iterador++;
                 }
 
 
