@@ -1,0 +1,76 @@
+﻿@page "/Categorias"
+@inject HttpClient Http
+@inject IJSRuntime JS
+
+@attribute [Authorize(Roles = "admin")]
+
+
+<h3>Categorias</h3>
+
+<div>
+    <a class="btn btn-primary" href="crear-categoria">Crear categoria</a>
+</div>
+
+
+@if (categorias == null)
+{
+    <p>Cargando...</p>
+}
+else if (categorias.Length == 0)
+{
+    <p>No hay categorias disponibles</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var categoria in categorias.Reverse())
+            {
+                <tr>
+                    <th>@categoria.IdCategoria</th>
+                    <th>@categoria.Nombre</th>
+                    <th>
+                        <a class="btn btn-success" href="/editar-categoria/@categoria.IdCategoria">Editar</a>
+                        <button class="btn btn-danger" @onclick="@(() => BorrarCategoria(categoria.IdCategoria))">Eliminar</button>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@code {
+    Categoria[] categorias { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarCategorias();
+    }
+
+    async Task CargarCategorias()
+    {
+        categorias = await Http.GetFromJsonAsync<Categoria[]>("/api/Categoria");
+    }
+
+
+    async Task BorrarCategoria(int id)
+    {
+        var Categ = categorias.First(x => x.IdCategoria == id);
+        if (await JS.InvokeAsync<bool>("confirm", $"Seguro que desea eliminar la categoria {Categ.Nombre}?"))
+        {
+            await Http.DeleteAsync($"api/Categoria/{Categ.IdCategoria}");
+            await CargarCategorias();
+        }
+    }
+
+
+}

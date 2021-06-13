@@ -1,0 +1,73 @@
+﻿@page "/"
+@using System.Net.Http
+@using System.Net.Http.Json
+@inject HttpClient Http
+@using apiVacantes.Models
+@using Microsoft.AspNetCore.Authorization;
+@attribute [AllowAnonymous]
+
+
+@{
+    Trabajos[] trabajos = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
+    Categoria[] categorias = await Http.GetFromJsonAsync<Categoria[]>("/api/Categoria");
+}
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item" data-bs-interval="4000">
+            <img src="/img/trabajo2.jpg" class="d-block w-100 h-75" alt="...">
+            <div class="carousel-caption d-none d-md-block bg-dark pb-3 banner rounded-3">
+                <h5 class="font">¿Estas buscando un trabajo?</h5>
+                <p class="font">Estas en el lugar indicado. Revisa nuestras vacantes</p>
+            </div>
+        </div>
+        <div class="carousel-item active" data-bs-interval="4000">
+            <img src="/img/trabajo3.jpg" class="d-block w-100 h-75" alt="...">
+            <div class="carousel-caption d-none d-md-block bg-dark pb-3 banner rounded-3">
+                <h5 class="font">¿Eres una empresa y estas buscando empleados?</h5>
+                <p class="font">Estas en el lugar indicado. Publica tu Vacante</p>
+                <a class="btn btn-outline-info btn-lg" href="/crear-vacante">Publicar Vacante  <i class="bi bi-arrow-up-right-square mx-1"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@foreach (var categoria in categorias)
+{
+    <div class="container-fluid p-5">
+        <a href="/categoria/id=@categoria.IdCategoria" class="h3 text-decoration-none link-info mb-5">@categoria.Nombre</a>
+        <table class="table p-5 table-striped table-bordered table-hover mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ubicacion</th>
+                    <th scope="col">Posicion</th>
+                    <th scope="col">Empresa</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vacante in trabajos.Where(x => x.IdCategoria == categoria.IdCategoria))
+                {
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>
+                            @Html.DisplayFor(modelItem => vacante.Ubicacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => vacante.Posicion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => vacante.Empresa)
+                        </td>
+                        <td class="col-2"><a href="detalles/id=@vacante.IdTrabajo" class="btn btn-outline-success w-75 mx-auto d-block">Ver Vacante</a></td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+
+}
+
