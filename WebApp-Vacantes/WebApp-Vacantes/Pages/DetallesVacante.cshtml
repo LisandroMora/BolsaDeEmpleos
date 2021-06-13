@@ -32,25 +32,31 @@
     else if (trabajo.IdTipo == 3) tipo = "Freelance";
 }
 
-
-<div class="card my-3 mx-auto d-flex mt-5" style="max-width: 1300px;">
+<div class="card my-3 mx-auto" style="max-width: 1000px;">
     <div class="row g-0">
-        <div class="col-md-4 d-flex justify-content-center">
-            <img src="~/logos/@trabajo.UrlString" alt="Logo" class="img-fluid p-4  rounded" style="border-radius:300px">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">@trabajo.Posicion</h5>
-                <p class="card-text">Ubicacion: @trabajo.Ubicacion</p>
-                <p class="card-text">Categoria: @categoria.Nombre</p>
-                <p class="card-text">Empresa: @trabajo.Empresa</p>
-                <p class="card-text">Descripcion: @trabajo.Descripcion</p>
-                <p class="card-text">Tipo: @tipo</p>
-                <p class="card-text">Email: @trabajo.Email</p>
-                <p class="card-text">Como Aplicar: @trabajo.ComoAplicar</p>
-                <p class="card-text"><small class="text-muted">Publicado en: @trabajo.Fecha</small></p>
+        <div class="col-md-10">
+            <div class="card-body pb-0">
+                <h1 class="card-text">@trabajo.Empresa</h1>
+                <a href="/categoria/id=@categoria.IdCategoria" class="text-decoration-none">
+                <span class="card-text"><i class="bi bi-tag"></i> @categoria.Nombre</span></a> - 
+                <span class="card-text"><i class="bi bi-geo-alt-fill"></i> @trabajo.Ubicacion</span>
+                <hr />
+                <p class="card-title">@trabajo.Posicion | @tipo</p>
+                <hr />
             </div>
         </div>
+        <div class="col-md-2">
+            <img src="~/logos/@trabajo.UrlString" class="img-fluid" alt="logo">
+        </div>
+    </div>
+    <div class="card-body pt-0">
+        <h4 class="h4">Descripcion</h4>
+        <p class="card-text">@trabajo.Descripcion</p>
+        <h4 class="h5">Como Aplicar</h4>
+        <p class="card-text">@trabajo.ComoAplicar</p>
+        <span class="card-text">Email: </span><a href="mailto:GBH@vacantes.es">@trabajo.Email</a>
+    </div>
+    <div class="card-footer">
+        <p class="card-text"><small class="text-muted">Publicado en: @trabajo.Fecha</small></p>
     </div>
 </div>
-
