@@ -1,0 +1,18 @@
+﻿@page "/Configuracion"
+@attribute [Authorize(Roles = "admin")]
+
+<h1>Configuracion de administrador</h1>
+
+<p>Numero actual: @NumeroVacantes</p>
+<label>Numero de vacantes: </label>
+<input type="number" @bind-value="NumeroVacantes" />
+
+@code {
+
+    static int NumeroVacantes { get; set; } = 10;
+
+    public static int GetNumero()
+    {
+        return NumeroVacantes;
+    }
+}
