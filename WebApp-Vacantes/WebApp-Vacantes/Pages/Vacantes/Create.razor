@@ -4,10 +4,12 @@
 @using System.IO
 @using Microsoft.AspNetCore.Hosting
 @inject IWebHostEnvironment env
-@attribute [Authorize(Roles = "admin")]
+@attribute [Authorize(Roles = "admin, postulante")]
 
 
 <FormVacante TextBtn="Crear Vacante" OnValidSubmit="@CrearVacante" Trabajos="@trabajos"></FormVacante>
+
+<Confirmacion trabajo="trabajos"></Confirmacion>
 
 @code {
 

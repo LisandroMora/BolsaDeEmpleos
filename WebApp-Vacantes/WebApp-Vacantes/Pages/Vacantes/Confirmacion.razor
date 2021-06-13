@@ -1,0 +1,66 @@
+﻿
+@using Microsoft.AspNetCore.Hosting;
+@inject HttpClient Http
+@inject NavigationManager Navigator
+@inject IWebHostEnvironment env
+@attribute [Authorize(Roles = "admin, postulante")]
+
+<h1 class="h1 text-center">Asi se mostrara la vacante en nuestra pagina. Esta de acuerdo?</h1>
+
+<div class="card my-3 mx-auto" style="max-width: 1000px;">
+    <div class="row g-0">
+        <div class="col-md-10">
+            <div class="card-body pb-0">
+                <h1 class="card-text">@trabajo.Empresa</h1>
+                <span class="card-text"><i class="bi bi-tag"></i> @categoria.Nombre</span>
+                <span class="card-text"><i class="bi bi-geo-alt-fill"></i> @trabajo.Ubicacion</span>
+                <hr />
+                <p class="card-title">@trabajo.Posicion | @tipo</p>
+                <hr />
+            </div>
+        </div>
+        <div class="col-md-2">
+            <img src="~/logos/@trabajo.UrlString" class="img-fluid" alt="logo">
+        </div>
+    </div>
+    <div class="card-body pt-0">
+        <h4 class="h4">Descripcion</h4>
+        <p class="card-text">@trabajo.Descripcion</p>
+        <h4 class="h5">Como Aplicar</h4>
+        <p class="card-text">@trabajo.ComoAplicar</p>
+        <span class="card-text">Email: </span><a href="mailto:@trabajo.Email">@trabajo.Email</a>
+    </div>
+    <div class="card-footer">
+        <p class="card-text"><small class="text-muted">Publicado en: @trabajo.Fecha</small></p>
+    </div>
+    <button type="button" class="btn btn-success" @onclick="Crear">Confirmar</button>
+    <a class="btn btn-danger" href="/crear-vacante">Cancelar</a>
+
+</div>
+
+@code {
+
+    [Parameter] public Trabajos trabajo { get; set; } = new Trabajos();
+    Categoria categoria = new Categoria();
+    string tipo = "";
+
+    protected override async Task OnParametersSetAsync()
+    {
+        categoria = await Http.GetFromJsonAsync<Categoria>($"api/Categoria/{trabajo.IdCategoria}");
+    }
+
+    private void Tipo()
+    {
+        if (trabajo.IdTipo == 1) tipo = "Full-Time";
+        else if (trabajo.IdTipo == 2) tipo = "Part-Time";
+        else tipo = "Freelance";
+    }
+
+    async Task Crear()
+    {
+        await Http.PostAsJsonAsync("api/Vacantes", trabajo);
+        Navigator.NavigateTo("/");
+    }
+
+
+}
