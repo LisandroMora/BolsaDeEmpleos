@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Radzen;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,9 @@ namespace WebApp_Vacantes
             {
                 options.Filters.Add(new AuthorizeFilter());
             });
+
+            services.AddScoped<DialogService>();
+            services.AddScoped<NotificationService>();
 
         }
 

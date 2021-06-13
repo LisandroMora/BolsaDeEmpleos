@@ -1,23 +1,28 @@
 ﻿@page "/crear-vacante"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
-@using System.IO
-@using Microsoft.AspNetCore.Hosting
-@inject IWebHostEnvironment env
+@inject DialogService DialogService
 @attribute [Authorize(Roles = "admin, postulante")]
 
-
 <FormVacante TextBtn="Crear Vacante" OnValidSubmit="@CrearVacante" Trabajos="@trabajos"></FormVacante>
-
-<Confirmacion trabajo="trabajos"></Confirmacion>
 
 @code {
 
     Trabajos trabajos = new Trabajos();
-    
+    Trabajos[] Listrabajos { get; set; }
+
+
     async Task CrearVacante()
     {
         await Http.PostAsJsonAsync("api/Vacantes", trabajos);
-        NavigationManager.NavigateTo("/?");
+        Listrabajos = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
+        Confirmar(Listrabajos);
     }
+
+    public void Confirmar(Trabajos[] trabajos)
+    {
+        int ID = trabajos.Last().IdTrabajo;
+        NavigationManager.NavigateTo($"/confirmacion/{ID}");
+    }
+
 }
