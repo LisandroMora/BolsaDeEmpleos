@@ -22,6 +22,9 @@
     int id = Convert.ToInt32(url.Substring(BeforeID + 1, (url.Length - BeforeID) - 1));
     Trabajos[] trabajo = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
     Categoria categoria = await Http.GetFromJsonAsync<Categoria>($"/api/Categoria/{id}");
+
+
+    ViewBag.Title = $"Vacantes {categoria.Nombre}";
 }
 
 

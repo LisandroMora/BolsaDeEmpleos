@@ -9,6 +9,7 @@
 
 
 @{
+    ViewBag.Title = "Vacantes RD";
     Trabajos[] trabajos = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
     Categoria[] categorias = await Http.GetFromJsonAsync<Categoria[]>("/api/Categoria");
     int NumeroVacantes = Settings.GetNumero();
@@ -69,6 +70,7 @@
 
                 }
             </tbody>
+            <caption><a href="/categoria/id=@categoria.IdCategoria">Ver todas las vacantes de @categoria.Nombre</a></caption>
         </table>
     </div>
 

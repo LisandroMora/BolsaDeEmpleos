@@ -5,69 +5,123 @@
 @attribute [Authorize(Roles = "admin, postulante")]
 
 
+<style>
+    form .row {
+        margin-bottom: 16px;
+    }
+</style>
+
 
 <EditForm Model="@Trabajos" OnValidSubmit="@OnValidSubmit">
-    <div class="form-group">
-        <div class="form-control">
-            <label>Categoria: </label>
-            <InputSelect @bind-Value="@Trabajos.IdCategoria">
-                @foreach (var dept in categoriasList)
-                {
-                    <option value="@dept.IdCategoria">@dept.Nombre</option>
-                }
-            </InputSelect>
+    <div class="container shadow-lg p-3 w-75">
+        <h1 class="h1 text-center my-2">Formulario de Vacantes</h1>
+        <div class="row">
+            <div class="col-md-3 align-items-center d-flex">
+                <label>Categoria: </label>
+            </div>
+            <div class="col-md-9">
+                <InputSelect @bind-Value="@Trabajos.IdCategoria" style="width: 100%;" class="form-control">
+                    <option>Seleccionar una categoria</option>
+                    @foreach (var dept in categoriasList)
+                    {
+                        <option value="@dept.IdCategoria">@dept.Nombre</option>
+                    }
+                </InputSelect>
+            </div>
         </div>
-        <div class="form-control">
-            <label>Fecha: </label>
-            <InputDate @bind-Value="@Trabajos.Fecha"></InputDate>
-            <ValidationMessage For="@(()=>Trabajos.Fecha)" />
+        <div class="row">
+            <div class="col-md-3 align-items-center d-flex">
+                <label>Ubicacion: </label>
+            </div>
+            <div class="col-md-9">
+                <InputText @bind-Value="@Trabajos.Ubicacion" style="width: 100%;" class="form-control" Placeholder="Ej: Santo Domingo Esste"></InputText>
+                <ValidationMessage For="@(()=>Trabajos.Ubicacion)" />
+            </div>
         </div>
-        <div class="form-control">
-            <label>Ubicacion: </label>
-            <InputText @bind-Value="@Trabajos.Ubicacion"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.Ubicacion)" />
+        <div class="row">
+            <div class="col-md-3 align-items-center d-flex">
+                <label>Fecha: </label>
+            </div>
+            <div class="col-md-9">
+                <InputDate @bind-Value="@Trabajos.Fecha" style="width: 100%;" class="form-control"></InputDate>
+                <ValidationMessage For="@(()=>Trabajos.Fecha)" />
+            </div>
         </div>
-        <div class="form-control">
-            <label>Posicion: </label>
-            <InputText @bind-Value="@Trabajos.Posicion"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.Posicion)" />
+        <div class="row">
+            <div class="col-md-3 align-items-center d-flex">
+                <label>Tipo: </label>
+            </div>
+            <div class="col-md-9 d-flex justify-content-between align-items-center">
+                <InputRadioGroup Name="Tipo" @bind-Value="@Trabajos.IdTipo" class="form-control">
+                    <InputRadio Name="Tipo" Value="1" />Full-Time
+                    <InputRadio Name="Tipo" Value="2" />Part-Time
+                    <InputRadio Name="Tipo" Value="3" />Freelancer
+                </InputRadioGroup>
+            </div>
         </div>
-        <div class="form-control">
-            <label>Empresa: </label>
-            <InputText @bind-Value="@Trabajos.Empresa"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.Empresa)" />
+        <div class="row">
+            <div class="align-items-center d-flex col-md-3">
+                <label>Posicion: </label>
+            </div>
+            <div class="col-md-3">
+                <InputText @bind-Value="@Trabajos.Posicion" style="width: 100%;" class="form-control" Placeholder="Ej: Gerente"></InputText>
+                <ValidationMessage For="@(()=>Trabajos.Empresa)" />
+            </div>
+            <div class="align-items-center d-flex col-md-2">
+                <label>Empresa: </label>
+            </div>
+            <div class="col-md-4">
+                <InputText @bind-Value="@Trabajos.Empresa" style="width: 100%;" class="form-control" Placeholder="Ej: Claro Dominicana"></InputText>
+                <ValidationMessage For="@(()=>Trabajos.Empresa)" />
+            </div>
         </div>
-        <div class="form-control">
-            <label>Tipo: </label>
-            <InputRadioGroup Name="Tipo" @bind-Value="Trabajos.IdTipo">
-                <InputRadio Name="Tipo" Value="1"/>Full-Time
-                <InputRadio Name="Tipo" Value="2"/>Part-Time
-                <InputRadio Name="Tipo" Value="3"/>Freelancer
-            </InputRadioGroup>
+        <div class="row">
+            <div class="align-items-center d-flex col-md-3">
+                <label>Email: </label>
+            </div>
+            <div class="col-md-9">
+                <InputText @bind-Value="@Trabajos.Email" type="email" style="width: 100%;" class="form-control" Placeholder="Ejemplo@ejemplo.com"></InputText>
+                <ValidationMessage For="@(()=>Trabajos.Email)" />
+            </div>
         </div>
-        <div class="form-control">
-            <label>Descripcion: </label>
-            <InputText @bind-Value="@Trabajos.Descripcion"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.Descripcion)" />
+        <div class="row">
+            <div class="align-items-center d-flex col-md-3">
+                <label>Como Aplicar: </label>
+            </div>
+            <div class="col-md-9">
+                <InputText @bind-Value="@Trabajos.ComoAplicar" style="width: 100%;" class="form-control" Placeholder="Ej: Llevar el CV a la sucursal mas cercana"></InputText>
+                <ValidationMessage For="@(()=>Trabajos.ComoAplicar)" />
+            </div>
         </div>
-        <div class="form-control">
-            <label>Email: </label>
-            <InputText @bind-Value="@Trabajos.Email"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.Email)" />
+        <div class="row">
+            <div class="align-items-center d-flex col-md-3">
+                <label>URL: </label>
+            </div>
+            <div class="col-md-9">
+                <InputText @bind-Value="@Trabajos.UrlString" style="width: 100%;" class="form-control" Placeholder="URL de la pagina de la empresa o la vacante..."></InputText>
+            </div>
         </div>
-        <div class="form-control">
-            <label>Como Aplicar: </label>
-            <InputText @bind-Value="@Trabajos.ComoAplicar"></InputText>
-            <ValidationMessage For="@(()=>Trabajos.ComoAplicar)" />
+        <div class="row">
+            <div class="align-items-center d-flex col-md-3">
+                <label>Logo: </label>
+            </div>
+            <div class="col-md-9">
+                <InputFile OnChange="@OnInputFileChange" />
+            </div>
         </div>
-        <div class="form-control">
-            <label>Logo: </label>
-            <InputFile OnChange="@OnInputFileChange"/>
+        <div class="row">
+            <div class="align-items-center d-flex col-md-3">
+                <label>Descripcion: </label>
+            </div>
+            <div class="col-md-9">
+                <InputTextArea style="width: 100%;" Placeholder="Ingrese la descripcion de la vacante..." @bind-Value="@Trabajos.Descripcion" class="form-control" />
+            </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-success">@TextBtn</button>
+    <button type="submit" class="btn btn-success btn-block w-75 mx-auto my-3">@TextBtn</button>
     <DataAnnotationsValidator />
 </EditForm>
+
 
 
 @code {

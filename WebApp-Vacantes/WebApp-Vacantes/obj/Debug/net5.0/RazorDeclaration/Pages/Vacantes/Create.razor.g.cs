@@ -131,6 +131,13 @@ using Microsoft.AspNetCore.Hosting;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\Create.razor"
+           [Authorize(Roles = "admin")]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/crear-vacante")]
     public partial class Create : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -140,7 +147,7 @@ using Microsoft.AspNetCore.Hosting;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 15 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\Create.razor"
+#line 12 "C:\Users\lisan\OneDrive\Escritorio\TAREAS C5\Prog 3\BolsaDeEmpleos\WebApp-Vacantes\WebApp-Vacantes\Pages\Vacantes\Create.razor"
        
 
     Trabajos trabajos = new Trabajos();
@@ -148,7 +155,7 @@ using Microsoft.AspNetCore.Hosting;
     async Task CrearVacante()
     {
         await Http.PostAsJsonAsync("api/Vacantes", trabajos);
-        NavigationManager.NavigateTo("Vacantes");
+        NavigationManager.NavigateTo("/");
     }
 
 #line default

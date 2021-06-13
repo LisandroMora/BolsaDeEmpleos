@@ -12,6 +12,7 @@
 
 
 @{
+
     string url = Request.GetDisplayUrl();
     int BeforeID = url.IndexOf("=");
 
@@ -20,6 +21,7 @@
     Categoria categoria = await Http.GetFromJsonAsync<Categoria>($"/api/Categoria/{trabajo.IdCategoria}");
     var path = $"{env.WebRootPath}\\logos\\{trabajo.UrlString}";
 
+    ViewBag.Title = $"Vacante {trabajo.Empresa}";
 
     if (System.IO.File.Exists(path) == false)
     {
