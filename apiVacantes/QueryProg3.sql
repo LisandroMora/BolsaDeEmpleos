@@ -92,3 +92,30 @@ go
 
 
 ALTER TABLE aspnetusers add constraint defualtrol DEFAULT 'postulante' for rol;
+
+
+/**/
+
+drop table postulaciones
+go
+
+
+alter table trabajos alter column descripcion nvarchar(max)
+go
+
+
+alter table trabajos drop column logo 
+go
+
+
+
+alter table trabajos add  logo nvarchar(max)
+go
+
+/*en el fk pon el nombre que genero tu pc*/
+alter table trabajos drop  constraint  fk_categoria
+go
+
+
+alter table trabajos add constraint fk_categoria foreign key (idcategoria) references categoria(idcategoria) on delete cascade on update cascade
+go
