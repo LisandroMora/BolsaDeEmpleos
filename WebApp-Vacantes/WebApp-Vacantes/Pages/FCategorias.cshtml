@@ -49,7 +49,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var vacante in trabajo.Where(x => x.IdCategoria == categoria.IdCategoria))
+                @foreach (var vacante in trabajo.Where(x => x.IdCategoria == categoria.IdCategoria).Reverse())
                 {
                     <tr>
                         <th scope="row">@iterador</th>
