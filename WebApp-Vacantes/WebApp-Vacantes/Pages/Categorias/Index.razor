@@ -3,6 +3,7 @@
 @inject IJSRuntime JS
 
 @attribute [Authorize(Roles = "admin")]
+@inject DialogService DialogService
 
 
 <h3>Categorias</h3>
@@ -65,7 +66,7 @@ else
     async Task BorrarCategoria(int id)
     {
         var Categ = categorias.First(x => x.IdCategoria == id);
-        if (await JS.InvokeAsync<bool>("confirm", $"Seguro que desea eliminar la categoria {Categ.Nombre}?"))
+        if ((await DialogService.Confirm("¿Esta seguro de que quiere borrar la categoria?", "Alerta", new ConfirmOptions() { OkButtonText = "Sí", CancelButtonText = "No" })) == true)
         {
             await Http.DeleteAsync($"api/Categoria/{Categ.IdCategoria}");
             await CargarCategorias();

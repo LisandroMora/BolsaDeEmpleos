@@ -3,6 +3,8 @@
 @inject IJSRuntime JS
 
 @attribute [Authorize(Roles = "admin, postulante")]
+@inject DialogService DialogService
+
 
 
 <h3>Vacantes</h3>
@@ -41,6 +43,7 @@ else
                     <th>
                         <a class="btn btn-success" href="/editar-vacante/@trabajo.IdTrabajo">Editar</a>
                         <button class="btn btn-danger" @onclick="@(() => BorrarVacante(trabajo.IdTrabajo))">Eliminar</button>
+                       
                     </th>
                 </tr>
             }
@@ -69,7 +72,15 @@ else
     async Task BorrarVacante(int id)
     {
         var Vacante = trabajos.First(x => x.IdTrabajo == id);
-        if (await JS.InvokeAsync<bool>("confirm", $"Seguro que desea eliminar la vacante {Vacante.Descripcion}?"))
+
+        
+
+
+
+
+
+
+        if ((await DialogService.Confirm("¿Esta seguro de que quiere borrar la vacante?", "Alerta", new ConfirmOptions() { OkButtonText = "Sí", CancelButtonText = "No" }))== true)
         {
             await Http.DeleteAsync($"api/Vacantes/{Vacante.IdTrabajo}");
             await CargarVacantes();
