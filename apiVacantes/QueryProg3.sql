@@ -39,31 +39,19 @@ go
 
 Create table Trabajos(
 	idTrabajo int not null primary key identity,
-	idCategoria int foreign key references Categoria(idCategoria),
+	idCategoria int foreign key references Categoria(idCategoria) on delete cascade on update cascade,
 	fecha date,
-	ubicacion varchar(100),
-	posicion varchar(100),
-	empresa varchar(100),
+	ubicacion varchar(200),
+	posicion varchar(200),
+	empresa varchar(200),
 	idTipo int foreign key references Tipo(idTipo),
-	logo image,
+	logo varchar(200),
 	urlString varchar(500),
-	descripcion varchar(500),
+	descripcion text,
 	email varchar(50),
 	comoAplicar varchar(500)
 )
 
-
-Create table postulaciones(
-	idPostulacion int not null primary key identity,
-	nombre varchar(50),
-	correo varchar (50),
-	telefono varchar(50),
-	trabajo int foreign key references Trabajos(idTrabajo)
-) 
-
-
-
-select * from Trabajos
 
 go
 
@@ -92,3 +80,32 @@ go
 
 
 ALTER TABLE aspnetusers add constraint defualtrol DEFAULT 'postulante' for rol;
+
+
+/**/
+
+go
+
+/* Si ya esta creada hay que ejecutar esta parte
+
+alter table trabajos alter column descripcion nvarchar(max)
+go
+
+
+alter table trabajos drop column logo 
+go
+
+
+
+alter table trabajos add  logo nvarchar(max)
+go
+
+/*en el fk pon el nombre que genero tu pc*/
+alter table trabajos drop  constraint  FK__Trabajos__idCate__286302EC
+go
+
+
+alter table trabajos add constraint fk_categoria foreign key (idcategoria) references categoria(idcategoria) on delete cascade on update cascade
+go
+
+*/

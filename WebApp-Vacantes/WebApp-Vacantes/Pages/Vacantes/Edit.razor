@@ -3,9 +3,6 @@
 @inject NavigationManager Navigator
 @attribute [Authorize(Roles = "admin, postulante")]
 
-
-<h3>Edit</h3>
-
 <FormVacante TextBtn="Editar Vacante" OnValidSubmit="@EditarVacante" Trabajos="@trabajo"></FormVacante>
 
 @code {

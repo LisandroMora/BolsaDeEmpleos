@@ -34,7 +34,7 @@
                 <label>Ubicacion: </label>
             </div>
             <div class="col-md-9">
-                <InputText @bind-Value="@Trabajos.Ubicacion" style="width: 100%;" class="form-control" Placeholder="Ej: Santo Domingo Esste"></InputText>
+                <InputText @bind-Value="@Trabajos.Ubicacion" style="width: 100%;" class="form-control" Placeholder="Ej: Santo Domingo Este"></InputText>
                 <ValidationMessage For="@(()=>Trabajos.Ubicacion)" />
             </div>
         </div>
@@ -158,7 +158,7 @@
     {
         Stream stream = selectedFiles.OpenReadStream();
         var path = $"{env.WebRootPath}\\logos\\{selectedFiles.Name}";
-        Trabajos.UrlString = selectedFiles.Name;
+        Trabajos.Logo = selectedFiles.Name;
         FileStream fs = File.Create(path);
         await stream.CopyToAsync(fs);
         stream.Close();
