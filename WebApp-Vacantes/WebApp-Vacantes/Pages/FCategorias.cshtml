@@ -23,7 +23,7 @@
     Trabajos[] trabajo = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
     Categoria categoria = await Http.GetFromJsonAsync<Categoria>($"/api/Categoria/{id}");
 
-    int iterador = 0;
+    int iterador = 1;
 
     ViewBag.Title = $"Vacantes {categoria.Nombre}";
 }

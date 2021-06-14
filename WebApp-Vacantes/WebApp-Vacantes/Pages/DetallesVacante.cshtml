@@ -19,13 +19,13 @@
     int id = Convert.ToInt32(url.Substring(BeforeID + 1, (url.Length - BeforeID) - 1));
     Trabajos trabajo = await Http.GetFromJsonAsync<Trabajos>($"api/Vacantes/{id}");
     Categoria categoria = await Http.GetFromJsonAsync<Categoria>($"/api/Categoria/{trabajo.IdCategoria}");
-    var path = $"{env.WebRootPath}\\logos\\{trabajo.UrlString}";
+    var path = $"{env.WebRootPath}\\logos\\{trabajo.Logo}";
 
     ViewBag.Title = $"Vacante {trabajo.Empresa}";
 
     if (System.IO.File.Exists(path) == false)
     {
-        trabajo.UrlString = "logoVRD.jpg";
+        trabajo.Logo = "logoVRD.jpg";
     };
 
     string tipo = "";
@@ -48,15 +48,19 @@
             </div>
         </div>
         <div class="col-md-2">
-            <img src="~/logos/@trabajo.UrlString" class="img-fluid" alt="logo">
+            <img src="~/logos/@trabajo.Logo" class="img-fluid" alt="logo">
         </div>
     </div>
     <div class="card-body pt-0">
         <h4 class="h4">Descripcion</h4>
         <p class="card-text">@trabajo.Descripcion</p>
         <h4 class="h5">Como Aplicar</h4>
-        <p class="card-text">@trabajo.ComoAplicar</p>
+        <span class="card-text">@trabajo.ComoAplicar</span> |
         <span class="card-text">Email: </span><a href="mailto:GBH@vacantes.es">@trabajo.Email</a>
+        @if (trabajo.UrlString != null)
+        {
+            <span class="card-text">| URL: </span><a href="../@trabajo.UrlString">@trabajo.UrlString</a>
+        }
     </div>
     <div class="card-footer">
         <p class="card-text"><small class="text-muted">Publicado en: @trabajo.Fecha</small></p>

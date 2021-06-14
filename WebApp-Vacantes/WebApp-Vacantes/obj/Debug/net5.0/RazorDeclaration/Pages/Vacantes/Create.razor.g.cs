@@ -144,7 +144,15 @@ using Radzen.Blazor;
     {
         await Http.PostAsJsonAsync("api/Vacantes", trabajos);
         Listrabajos = await Http.GetFromJsonAsync<Trabajos[]>("/api/Vacantes");
-        Confirmar(Listrabajos);
+        if(Listrabajos.Length != 0)
+        {
+            Confirmar(Listrabajos);
+        }
+        else
+        {
+            NavigationManager.NavigateTo($"/Vacantes");
+
+        }
     }
 
     public void Confirmar(Trabajos[] trabajos)

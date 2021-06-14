@@ -95,8 +95,9 @@ namespace apiVacantes.Context
                 entity.Property(e => e.IdTipo).HasColumnName("idTipo");
 
                 entity.Property(e => e.Logo)
-                    .HasColumnType("image")
-                    .HasColumnName("logo");
+                     .HasMaxLength(100)
+                     .IsUnicode(false)
+                     .HasColumnName("logo");
 
                 entity.Property(e => e.Posicion)
                     .HasMaxLength(100)

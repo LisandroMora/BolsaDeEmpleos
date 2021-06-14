@@ -181,7 +181,7 @@ using Microsoft.AspNetCore.Hosting;
     {
         Stream stream = selectedFiles.OpenReadStream();
         var path = $"{env.WebRootPath}\\logos\\{selectedFiles.Name}";
-        Trabajos.UrlString = selectedFiles.Name;
+        Trabajos.Logo = selectedFiles.Name;
         FileStream fs = File.Create(path);
         await stream.CopyToAsync(fs);
         stream.Close();
