@@ -56,10 +56,10 @@
         <p class="card-text">@trabajo.Descripcion</p>
         <h4 class="h5">Como Aplicar</h4>
         <span class="card-text">@trabajo.ComoAplicar</span> |
-        <span class="card-text">Email: </span><a href="mailto:GBH@vacantes.es">@trabajo.Email</a>
+        <span class="card-text">Email: </span><a href="mailto:GBH@vacantes.es" class="text-decoration-none link-info">@trabajo.Email</a>
         @if (trabajo.UrlString != null)
         {
-            <span class="card-text">| URL: </span><a href="../@trabajo.UrlString">@trabajo.UrlString</a>
+            <span class="card-text">| URL: </span><a href="../@trabajo.UrlString" class="text-decoration-none link-info">@trabajo.UrlString</a>
         }
     </div>
     <div class="card-footer">

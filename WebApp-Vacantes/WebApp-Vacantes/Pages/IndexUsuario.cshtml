@@ -55,7 +55,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var vacante in trabajos.Where(x => x.IdCategoria == categoria.IdCategoria).Take(NumeroVacantes).Reverse())
+                @foreach (var vacante in trabajos.Where(x => x.IdCategoria == categoria.IdCategoria).Take(NumeroVacantes).Reverse().OrderByDescending(x=>x.Fecha))
                 {
                     iterador++;
                     <tr>
