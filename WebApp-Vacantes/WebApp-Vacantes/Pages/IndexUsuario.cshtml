@@ -55,7 +55,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var vacante in trabajos.Where(x => x.IdCategoria == categoria.IdCategoria).Take(NumeroVacantes))
+                @foreach (var vacante in trabajos.Where(x => x.IdCategoria == categoria.IdCategoria).Take(NumeroVacantes).Reverse())
                 {
                     iterador++;
                     <tr>
