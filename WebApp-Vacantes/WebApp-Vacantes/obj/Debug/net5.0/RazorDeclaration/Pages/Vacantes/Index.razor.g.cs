@@ -156,11 +156,6 @@ using Radzen.Blazor;
 
         
 
-
-
-
-
-
         if ((await DialogService.Confirm("¿Esta seguro de que quiere borrar la vacante?", "Alerta", new ConfirmOptions() { OkButtonText = "Sí", CancelButtonText = "No" }))== true)
         {
             await Http.DeleteAsync($"api/Vacantes/{Vacante.IdTrabajo}");

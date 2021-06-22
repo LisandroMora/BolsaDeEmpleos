@@ -4,14 +4,19 @@
 
 
 <EditForm Model="@Categorias" OnValidSubmit="@OnValidSubmit">
-    <div class="form-group">
-        <div class="form-control">
-            <label>Nombre: </label>
-            <InputText @bind-Value="@Categorias.Nombre"></InputText>
-            <ValidationMessage For="@(()=>Categorias.Nombre)" />
+    <div class="container shadow-lg p-3 w-75">
+        <h1 class="h1 text-center my-4">Formulario de categorias</h1>
+        <div class="row">
+            <div class="col-md-3 align-items-center d-flex">
+                <label>Nombre: </label>
+            </div>
+            <div class="col-md-9">
+                <InputText @bind-Value="@Categorias.Nombre" style="width: 100%;" class="form-control"></InputText>
+                <ValidationMessage For="@(()=>Categorias.Nombre)" />
+            </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-success">@TextBtn</button>
+    <button type="submit" class="btn btn-success btn-block w-75 mx-auto my-3">@TextBtn</button>
     <DataAnnotationsValidator />
 </EditForm>
 
